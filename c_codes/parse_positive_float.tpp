@@ -2,6 +2,9 @@
 
 inline float parse_positive_float(const std::string &text,const std::string &name)
 {
+    static const std::regex positive_decimal_pattern(R"(\+?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)");
+    if(!std::regex_match(text,positive_decimal_pattern))
+        throw std::runtime_error(name+"必须是正数："+text);
     size_t parsed_character_num=0;
     double value=0;
     try

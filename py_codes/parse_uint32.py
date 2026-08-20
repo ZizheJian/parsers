@@ -1,4 +1,4 @@
-from parse_uint64 import parse_uint64
+from .parse_uint64 import parse_uint64
 
 def parse_uint32(text:str,name:str)->int:
     value=parse_uint64(text,name)

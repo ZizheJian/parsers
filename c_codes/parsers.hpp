@@ -3,6 +3,7 @@
 #include <cmath>
 #include <cstdint>
 #include <limits>
+#include <regex>
 #include <stdexcept>
 #include <string>
 
