@@ -11,3 +11,4 @@
 #include "parse_uint32.tpp"
 #include "parse_positive_uint32.tpp"
 #include "parse_positive_float.tpp"
+#include "parse_bool.tpp"
