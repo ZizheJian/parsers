@@ -1,7 +1,4 @@
-from .parse_uint32 import parse_uint32
+from .parse_unsigned_integer import parse_unsigned_integer
 
 def parse_positive_uint32(text:str,name:str="")->int:
-    value=parse_uint32(text,name)
-    if value==0:
-        raise ValueError(f"{name}必须是正整数：{text}")
-    return value
+    return parse_unsigned_integer(text,name,True,2**32-1,"uint32_t")
