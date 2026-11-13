@@ -1,8 +1,8 @@
 import re
 
 UINT64_MAX=2**64-1
-# 只允许数字和开头的+号，不允许多余的前导0。re.ASCII让\d只匹配0到9，和C++版一致
-non_negative_integer_pattern=re.compile(r"\+?(?:0|[1-9]\d*)",re.ASCII)
+# 只允许数字，不允许正负号和多余的前导0。re.ASCII让\d只匹配0到9，和C++版一致
+non_negative_integer_pattern=re.compile(r"0|[1-9]\d*",re.ASCII)
 
 def parse_uint64(text:str,name:str="")->int:
     if not isinstance(text,str) or non_negative_integer_pattern.fullmatch(text) is None:

@@ -8,11 +8,11 @@
 
 | Function | Returns | Accepts | Rejects |
 |---|---|---|---|
-| `parse_uint64` | An integer from 0 to 2^64-1 | `0`, `42`, `+42` | `-1`, `007`, `1.0`, `1e3` |
+| `parse_uint64` | An integer from 0 to 2^64-1 | `0`, `42` | `+42`, `-1`, `007`, `1.0`, `1e3` |
 | `parse_uint32` | An integer from 0 to 2^32-1 | Same as above | Same as above |
-| `parse_positive_uint32` | An integer from 1 to 2^32-1 | `1`, `42`, `+42` | `0` and the forms rejected above |
-| `parse_positive_double` | A finite positive number within the double range | `1`, `+1.5`, `.5`, `1.`, `1e-3` | `0`, `-1`, `inf`, `nan`, `1e400` |
-| `parse_positive_float` | A finite positive number within the float range, rounded to float precision | Same as above | `0`, `-1`, `inf`, `nan`, `1e39` |
+| `parse_positive_uint32` | An integer from 1 to 2^32-1 | `1`, `42` | `0` and the forms rejected above |
+| `parse_positive_double` | A finite positive number within the double range | `1`, `1.5`, `.5`, `1.`, `1e-3`, `1e+3` | `+1.5`, `0`, `-1`, `inf`, `nan`, `1e400` |
+| `parse_positive_float` | A finite positive number within the float range, rounded to float precision | Same as above | `+1.5`, `0`, `-1`, `inf`, `nan`, `1e39` |
 | `parse_bool` | true or false | `true`, `false` | `True`, `1`, `yes` |
 
 No function accepts leading or trailing spaces.
