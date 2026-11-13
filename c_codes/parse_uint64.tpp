@@ -1,19 +1,22 @@
 #pragma once
 
+#include <cstdint>
+#include <regex>
+#include <stdexcept>
+#include <string>
+
 inline uint64_t parse_uint64(const std::string &text,const std::string &name)
 {
-    size_t parsed_character_num=0;
-    uint64_t value=0;
+    // 只允许数字和开头的+号，不允许多余的前导0
+    static const std::regex non_negative_integer_pattern(R"(\+?(?:0|[1-9]\d*))");
+    if(!std::regex_match(text,non_negative_integer_pattern))
+        throw std::runtime_error(name+"必须是非负整数："+text);
     try
     {
-        value=std::stoull(text,&parsed_character_num);
+        return std::stoull(text);
     }
-    catch (...)
+    catch(const std::out_of_range &)
     {
-        throw std::runtime_error(name+"必须是非负整数："+text);
-    }
-    if (parsed_character_num!=text.size() ||
-        (std::to_string(value)!=text && "+"+std::to_string(value)!=text))
         throw std::runtime_error(name+"必须是uint64_t范围内的非负整数："+text);
-    return value;
+    }
 }

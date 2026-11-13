@@ -1,15 +1,10 @@
 import math
-import re
-
-positive_decimal_pattern=re.compile(r"\+?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?")
+from .check_positive_decimal import check_positive_decimal
 
 def parse_positive_double(text:str,name:str)->float:
-    if not isinstance(text,str) or positive_decimal_pattern.fullmatch(text) is None:
-        raise ValueError(f"{name}必须是正数：{text}")
-    try:
-        value=float(text)
-    except (TypeError,ValueError):
-        raise ValueError(f"{name}必须是正数：{text}") from None
+    check_positive_decimal(text,name)
+    # float遇到超出范围的数不报错：太大时得到inf，太小时得到0或一个很小的数，所以下面统一检查
+    value=float(text)
     if not value>0 or not math.isfinite(value):
         raise ValueError(f"{name}必须是double范围内的有限正数：{text}")
     return value
