@@ -17,7 +17,7 @@
 
 No function accepts leading or trailing spaces.
 
-Each function takes two arguments: the text to parse and the argument name. The name appears in the error message. For example, `parse_positive_float("abc","-M error bound")` reports `-M error bound必须是正数：abc`. The C++ version throws `std::runtime_error`, and the Python version raises `ValueError`.
+Each function takes two arguments: the text to parse and the argument name. The name appears in the error message. For example, `parse_positive_float("abc","-M error bound")` reports `-M error bound必须是正数：abc`. The name can be omitted, in which case `parse_positive_float("abc")` reports `必须是正数：abc`. The C++ version throws `std::runtime_error`, and the Python version raises `ValueError`.
 
 ## C++
 

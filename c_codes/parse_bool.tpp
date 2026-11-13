@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <string>
 
-inline bool parse_bool(const std::string &text,const std::string &name)
+inline bool parse_bool(const std::string &text,const std::string &name="")
 {
     if(text=="true")
         return true;

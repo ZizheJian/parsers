@@ -17,7 +17,7 @@
 
 所有函数都不接受前后的空格。
 
-每个函数有两个参数：要解析的文字和参数名。参数名用在报错信息里，例如`parse_positive_float("abc","-M的error bound")`会报`-M的error bound必须是正数：abc`。C++版抛出`std::runtime_error`，Python版抛出`ValueError`。
+每个函数有两个参数：要解析的文字和参数名。参数名用在报错信息里，例如`parse_positive_float("abc","-M的error bound")`会报`-M的error bound必须是正数：abc`。参数名可以省略，`parse_positive_float("abc")`会报`必须是正数：abc`。C++版抛出`std::runtime_error`，Python版抛出`ValueError`。
 
 ## C++
 

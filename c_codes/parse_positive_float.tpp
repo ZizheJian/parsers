@@ -6,7 +6,7 @@
 #include <string>
 #include "check_positive_decimal.tpp"
 
-inline float parse_positive_float(const std::string &text,const std::string &name)
+inline float parse_positive_float(const std::string &text,const std::string &name="")
 {
     check_positive_decimal(text,name);
     // strtof遇到超出范围的数不报错：太大时得到inf，太小时得到0或一个很小的数，所以下面统一检查

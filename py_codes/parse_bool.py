@@ -1,4 +1,4 @@
-def parse_bool(text:str,name:str)->bool:
+def parse_bool(text:str,name:str="")->bool:
     if text=="true":
         return True
     if text=="false":

@@ -6,7 +6,7 @@
 #include <string>
 #include "parse_uint64.tpp"
 
-inline uint32_t parse_uint32(const std::string &text,const std::string &name)
+inline uint32_t parse_uint32(const std::string &text,const std::string &name="")
 {
     uint64_t value=parse_uint64(text,name);
     if(value>std::numeric_limits<uint32_t>::max())
