@@ -1,16 +1,13 @@
 #pragma once
 
 #include <cstdint>
-#include <regex>
 #include <stdexcept>
 #include <string>
+#include "check_non_negative_integer.tpp"
 
 inline uint64_t parse_uint64(const std::string &text,const std::string &name="")
 {
-    // 只允许数字，不允许正负号和多余的前导0
-    static const std::regex non_negative_integer_pattern(R"(0|[1-9]\d*)");
-    if(!std::regex_match(text,non_negative_integer_pattern))
-        throw std::runtime_error(name+"必须是非负整数："+text);
+    check_non_negative_integer(text,name);
     try
     {
         return std::stoull(text);
