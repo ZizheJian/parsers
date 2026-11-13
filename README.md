@@ -21,7 +21,7 @@ Each function takes two arguments: the text to parse and the argument name. The 
 
 ## C++
 
-Add the directory as a CMake subdirectory and link the target:
+Requires C++17 or later. Add the directory as a CMake subdirectory and link the target:
 
 ```cmake
 add_subdirectory(third_party/parsers/c_codes ${CMAKE_BINARY_DIR}/parsers_build)

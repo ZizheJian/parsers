@@ -21,7 +21,7 @@
 
 ## C++
 
-在CMake里把目录加为子目录，再链接目标：
+需要C++17或更新的版本。在CMake里把目录加为子目录，再链接目标：
 
 ```cmake
 add_subdirectory(third_party/parsers/c_codes ${CMAKE_BINARY_DIR}/parsers_build)
