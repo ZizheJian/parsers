@@ -6,14 +6,14 @@
 
 ## 函数
 
-| 函数 | 返回 | 接受 | 不接受 |
-|---|---|---|---|
-| `parse_uint64` | 0到2^64-1的整数 | `0`、`42` | `+42`、`-1`、`007`、`1.0`、`1e3` |
-| `parse_uint32` | 0到2^32-1的整数 | 同上 | 同上 |
-| `parse_positive_uint32` | 1到2^32-1的整数 | `1`、`42` | `0`，以及上面不接受的写法 |
-| `parse_positive_double` | double范围内的有限正数 | `1`、`1.5`、`.5`、`1.`、`1e-3`、`1e+3` | `+1.5`、`0`、`-1`、`inf`、`nan`、`1e400` |
-| `parse_positive_float` | float范围内的有限正数，舍入到float精度 | 同上 | `+1.5`、`0`、`-1`、`inf`、`nan`、`1e39` |
-| `parse_bool` | true或false | `true`、`false` | `True`、`1`、`yes` |
+| 函数 | 返回 |
+|---|---|
+| `parse_uint64` | 0到2^64-1的整数 |
+| `parse_uint32` | 0到2^32-1的整数 |
+| `parse_positive_uint32` | 1到2^32-1的整数 |
+| `parse_positive_double` | double范围内的有限正数 |
+| `parse_positive_float` | float范围内的有限正数，舍入到float精度 |
+| `parse_bool` | true或false |
 
 所有函数都不接受前后的空格。
 
